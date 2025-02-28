@@ -21,6 +21,12 @@ spec:
           image: alisial45/blog-app-frontend:latest
           ports:
             - containerPort: 5173
+          env:
+            - name: VITE_API_PATH
+               valueFrom:
+                configMapKeyRef:
+                 name: frontend-config
+                 key: vite_api_path
 ---
 apiVersion: v1
 kind: Service

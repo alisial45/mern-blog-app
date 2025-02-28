@@ -21,6 +21,12 @@ spec:
           image: alisial45/blog-app:latest
           ports:
             - containerPort: 8080
+          env:
+            - name: FRONTEND_URL
+              valueFrom:
+               configMapKeyRef:
+                name: backend-config
+                key: frontend_url
 ---
 apiVersion: v1
 kind: Service
