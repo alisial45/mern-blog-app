@@ -23,7 +23,7 @@ spec:
             - containerPort: 5173
           env:
             - name: VITE_API_PATH
-               valueFrom:
+              valueFrom:
                 configMapKeyRef:
                  name: frontend-config
                  key: vite_api_path
