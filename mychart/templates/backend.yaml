@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: blog-app
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      name: backend
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: alisial45/blog-app-backend:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: FRONTEND_URL
+              valueFrom:
+               configMapKeyRef:
+                name: backend-config
+                key: frontend_url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: blog-app
+spec:
+  type: NodePort
+  selector:
+    app: backend
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      nodePort: 31100

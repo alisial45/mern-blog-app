@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: blog-app
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      name: frontend
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: alisial45/blog-app-frontend:latest
+          ports:
+            - containerPort: 5173
+          env:
+            - name: VITE_API_PATH
+              valueFrom:
+                configMapKeyRef:
+                 name: frontend-config
+                 key: vite_api_path
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: blog-app
+spec:
+  selector:
+    app: frontend
+  type: NodePort
+  ports:
+    - port: 5173
+      targetPort: 5173
+      protocol: TCP
+      nodePort: 31000
