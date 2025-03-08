@@ -41,4 +41,6 @@ spec:
     - port: {{ .Values.frontend.service.port }}
       targetPort: {{ .Values.frontend.service.targetPort }}
       protocol: TCP
-      nodePort: {{ .Values.frontend.service.type }}
+      {{- if eq .Values.frontend.service.type "NodePort" }}
+      nodePort: {{ .Values.backend.service.nodePort | default nil }}  # Allows auto-assignment if not set
+      {{- end }}
