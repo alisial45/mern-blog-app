@@ -29,4 +29,4 @@ frontend:
     targetPort: 5173
     nodePort : 31000
   config:
-    vite_api_url: "http://65.0.31.133:5173"
+    vite_api_url: "http://65.0.31.133:31100"
