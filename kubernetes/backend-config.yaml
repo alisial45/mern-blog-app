@@ -4,4 +4,4 @@ metadata:
   name: backend-config
   namespace: blog-app
 data:
-  frontend_url: "http://13.234.112.231:5173"
+  frontend_url: "http://65.2.126.126:5173"
