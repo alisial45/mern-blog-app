@@ -1,4 +1,4 @@
-i Global configurations
+# Global configurations
 global:
   namespace: mern-blog-app
   imagePullPolicy: IfNotPresent
