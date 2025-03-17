@@ -3,7 +3,7 @@ name: CI MERN
 on:
   push:
     branches:
-      - main
+      - devops
     paths-ignore:
       - 'mychart/**'
       - 'kubernetes/**'
