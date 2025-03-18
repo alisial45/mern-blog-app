@@ -54,8 +54,10 @@ jobs:
     - name: Update tag in Helm chart
       run: |
         
-        sed -i 's|\(backend:.*\n.*tag:\) .*|\1 "${{github.run_id}}"|' mychart/values.yaml
-        sed -i 's|\(frontend:.*\n.*tag:\) .*|\1 "${{github.run_id}}"|' mychart/values.yaml
+        
+        
+        sed -i 's|\(tag:\) .*|\1 "${{ github.run_id }}"|' mychart/values.yaml
+        cat mychart/values.yaml  # Debugging: Check if the changes actually happened
 
     - name: Commit and push changes
       run: |
