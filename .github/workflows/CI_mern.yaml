@@ -1,4 +1,5 @@
 name: CI MERN
+
 on:
   push:
     branches:
