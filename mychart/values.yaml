@@ -1,6 +1,6 @@
 # Global configurations
 global:
-  namespace: mern-blog-app
+  namespace: blog-app
   imagePullPolicy: IfNotPresent
 
 # Backend service details
@@ -15,7 +15,7 @@ backend:
     targetPort: 8080
     nodePort : 31100
   config:
-    frontend_url: "http://13.201.115.88:5173"
+    frontend_url: "http://13.232.4.186:5173"
 
 # Frontend service details
 frontend:
@@ -29,4 +29,4 @@ frontend:
     targetPort: 5173
     nodePort : 31000
   config:
-    vite_api_url: "http://13.201.115.88:31100"
+    vite_api_url: "http://13.232.4.186:31100"

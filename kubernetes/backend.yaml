@@ -21,12 +21,19 @@ spec:
           image: alisial45/blog-app-backend:latest
           ports:
             - containerPort: 8080
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/config
           env:
             - name: FRONTEND_URL
               valueFrom:
                configMapKeyRef:
                 name: backend-config
                 key: frontend_url
+      volumes:
+         - name: config-volume
+           configMap:
+             name: backend-config
 ---
 apiVersion: v1
 kind: Service
