@@ -19,7 +19,7 @@ FROM node:21-slim
 # setup the working dir
 WORKDIR /app
 
-# copy the above stage as compressed
+# copyy the above stage as compressed
 COPY --from=backend-builder /app .
 
 COPY .env.docker .env
