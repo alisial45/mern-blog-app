@@ -3,7 +3,7 @@ name: CI MERN
 on:
   push:
     branches:
-      - devops
+      - mern-helm
     paths-ignore:
       - 'mern-chart/**'
       - 'kubernetes/**'
