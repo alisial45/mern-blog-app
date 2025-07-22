@@ -4,5 +4,5 @@ metadata:
   name: frontend-config
   namespace: blog-app
 data:
-  vite_api_path : "http://13.232.4.186:31100"
+  vite_api_path : "http://13.23.111.130:31100"
 

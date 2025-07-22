@@ -5,3 +5,4 @@ metadata:
   namespace: {{ .Values.global.namespace }}
 data:
   frontend_url: {{ .Values.backend.config.frontend_url }}
+

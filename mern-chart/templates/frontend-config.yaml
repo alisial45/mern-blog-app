@@ -6,3 +6,4 @@ metadata:
 data:
   vite_api_path : {{ .Values.frontend.config.vite_api_url }}
 
+

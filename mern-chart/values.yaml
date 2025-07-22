@@ -8,25 +8,26 @@ backend:
   replicaCount: 2
   image:
     repository: alisial45/blog-app-backend
-    tag: "13917766511"
+    tag: latest
   service:
     type: NodePort
     port: 8080
     targetPort: 8080
     nodePort : 31100
   config:
-    frontend_url: "http://13.232.4.186:5173"
+    frontend_url: http://13.233.111.130:5173
 
 # Frontend service details
 frontend:
   replicaCount: 2
   image:
     repository: alisial45/blog-app-frontend
-    tag: "13917766511"
+    tag: latest
   service:
     type: NodePort
     port: 5173
     targetPort: 5173
     nodePort : 31000
   config:
-    vite_api_url: "http://13.232.4.186:31100"
+    vite_api_url: http://13.233.111.130:31100
+
