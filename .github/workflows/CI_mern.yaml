@@ -5,7 +5,7 @@ on:
     branches:
       - devops
     paths-ignore:
-      - 'mychart/**'
+      - 'mern-chart/**'
       - 'kubernetes/**'
       - 'README.md'
 jobs:
@@ -56,13 +56,13 @@ jobs:
         
         
         
-        sed -i 's|\(tag:\) .*|\1 "${{ github.run_id }}"|' mychart/values.yaml
-        cat mychart/values.yaml  # Debugging: Check if the changes actually happened
+        sed -i 's|\(tag:\) .*|\1 "${{ github.run_id }}"|' mern-chart/values.yaml
+        cat mern-chart/values.yaml  # Debugging: Check if the changes actually happened
 
     - name: Commit and push changes
       run: |
         git config --global user.email "sialmusharraf@gmail.com"
         git config --global user.name "alisial45"
-        git add mychart/values.yaml
+        git add mern-chart/values.yaml
         git commit -m "Update tag in Helm chart"
         git push
