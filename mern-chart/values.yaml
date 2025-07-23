@@ -8,7 +8,7 @@ backend:
   replicaCount: 2
   image:
     repository: alisial45/blog-app-backend
-    tag: latest
+    tag: "16479734724"
   service:
     type: NodePort
     port: 8080
@@ -22,7 +22,7 @@ frontend:
   replicaCount: 2
   image:
     repository: alisial45/blog-app-frontend
-    tag: latest
+    tag: "16479734724"
   service:
     type: NodePort
     port: 5173
