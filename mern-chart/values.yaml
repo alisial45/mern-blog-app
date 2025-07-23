@@ -6,6 +6,7 @@ global:
   
 # Backend service details
 backend:
+  containerPort: 5173
   replicaCount: 2
   image:
     repository: alisial45/blog-app-backend
@@ -16,9 +17,11 @@ backend:
     targetPort: 5173
   config:
     frontend_url: http://3.109.183.209:32747/
+  
 
 # Frontend service details
 frontend:
+  containerPort: 8080
   replicaCount: 2
   image:
     repository: alisial45/blog-app-frontend
