@@ -10,10 +10,8 @@ backend:
     repository: alisial45/blog-app-backend
     tag: "16479734724"
   service:
-    type: NodePort
     port: 8080
     targetPort: 8080
-    nodePort : 31100
   config:
     frontend_url: http://13.201.61.138:5173
 
@@ -24,10 +22,8 @@ frontend:
     repository: alisial45/blog-app-frontend
     tag: "16479734724"
   service:
-    type: NodePort
     port: 5173
     targetPort: 5173
-    nodePort : 31000
-  config:
+    config:
     vite_api_url: http://13.201.61.138:31100
 
