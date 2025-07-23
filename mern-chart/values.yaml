@@ -3,6 +3,7 @@ global:
   namespace: blog-app
   imagePullPolicy: IfNotPresent
 
+  
 # Backend service details
 backend:
   replicaCount: 2
