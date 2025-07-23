@@ -20,7 +20,7 @@ spec:
         - name: frontend
           image: {{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}
           ports:
-            - containerPort: 5173
+            - containerPort: {{ .Values.frontend.containerPort }}
           env:
             - name: VITE_API_PATH
               valueFrom:
