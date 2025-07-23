@@ -13,7 +13,7 @@ backend:
     port: 8080
     targetPort: 8080
   config:
-    frontend_url: http://3.109.183.209:5173
+    frontend_url: http://3.109.183.209/
 
 # Frontend service details
 frontend:
@@ -25,5 +25,5 @@ frontend:
     port: 5173
     targetPort: 5173
     config:
-    vite_api_url: http://3.109.183.209:31100
+    vite_api_url: http://3.109.183.209/backend
 
