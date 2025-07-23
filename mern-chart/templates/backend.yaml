@@ -21,7 +21,7 @@ spec:
           image: {{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}
           imagePullPolicy: {{ .Values.global.imagePullPolicy }}
           ports:
-            - containerPort: 8080
+            - containerPort: {{ .Values.backend.containerPort }}
           env:
             - name: FRONTEND_URL
               valueFrom:
