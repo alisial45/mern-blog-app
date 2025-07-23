@@ -11,6 +11,7 @@ backend:
     repository: alisial45/blog-app-backend
     tag: "16479734724"
   service:
+    type: ClusterIP
     port: 5173
     targetPort: 5173
   config:
@@ -23,6 +24,7 @@ frontend:
     repository: alisial45/blog-app-frontend
     tag: "16479734724"
   service:
+    type: ClusterIP
     port: 8080
     targetPort: 8080
   config:
