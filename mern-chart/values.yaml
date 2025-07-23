@@ -15,7 +15,7 @@ backend:
     targetPort: 8080
     nodePort : 31100
   config:
-    frontend_url: http://13.233.111.130:5173
+    frontend_url: http://13.201.61.138:5173
 
 # Frontend service details
 frontend:
@@ -29,5 +29,5 @@ frontend:
     targetPort: 5173
     nodePort : 31000
   config:
-    vite_api_url: http://13.233.111.130:31100
+    vite_api_url: http://13.201.61.138:31100
 
