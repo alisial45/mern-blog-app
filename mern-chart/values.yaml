@@ -24,6 +24,6 @@ frontend:
   service:
     port: 5173
     targetPort: 5173
-    config:
-    vite_api_url: http://3.109.183.209:32747/backend
+  config:
+     vite_api_url: http://3.109.183.209:32747/backend
 
