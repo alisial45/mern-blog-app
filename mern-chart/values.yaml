@@ -6,30 +6,30 @@ global:
   
 # Backend service details
 backend:
-  containerPort: 5173
+  containerPort: 8080
   replicaCount: 2
   image:
     repository: alisial45/blog-app-backend
     tag: "16479734724"
   service:
     type: ClusterIP
-    port: 5173
-    targetPort: 5173
+    port: 8080
+    targetPort: 8080
   config:
     frontend_url: http://3.109.183.209:32747/
   
 
 # Frontend service details
 frontend:
-  containerPort: 8080
+  containerPort: 5173
   replicaCount: 2
   image:
     repository: alisial45/blog-app-frontend
     tag: "16479734724"
   service:
     type: ClusterIP
-    port: 8080
-    targetPort: 8080
+    port: 5173
+    targetPort: 5173
   config:
      vite_api_url: http://3.109.183.209:32747/backend
 
